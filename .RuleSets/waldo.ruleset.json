@@ -1,0 +1,11 @@
+{
+    "name": "waldo",
+    "description": "waldoRuleSet",
+    "rules": [
+        {
+            "id": "AW0006",
+            "action": "None",
+            "justification": "Should use the UseageCategory and AppArea"
+        }
+    ]
+}

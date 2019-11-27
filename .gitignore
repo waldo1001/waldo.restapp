@@ -1,0 +1,6 @@
+*.app
+launch.json
+*.zip
+cache*.json
+rad.json
+.ignore*

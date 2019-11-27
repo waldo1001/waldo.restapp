@@ -1,0 +1,20 @@
+{
+    "al.codeAnalyzers": [
+        "${CodeCop}",
+        "${UICop}",
+        "${PerTenantExtensionCop}"
+    ],
+    "al.enableCodeAnalysis": true,
+    "al.ruleSetPath": ".RuleSets/waldo.ruleset.json",
+    "al.enableCodeActions": true,
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShort>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShort>Ext.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>-PageCust.al",
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.RenameWithGit": true,
+    "CRS.ObjectNameSuffix": " WLD",
+    "CRS.RemoveSuffixFromFilename": true,
+    "editor.formatOnSave": true,
+    "rest-client.rememberCookiesForSubsequentRequests": false,
+    "alVarHelper.ignoreALSuffix": "WLD"
+}

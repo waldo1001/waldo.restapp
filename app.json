@@ -1,0 +1,32 @@
+{
+  "id": "ed8b3346-606b-4f87-99cc-b38c2ac80ea2",
+  "name": "RESTApp",
+  "publisher": "waldo",
+  "version": "1.0.0.1",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "./images/logo.png",
+  "dependencies": [
+    {
+      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "15.0.0.0",
+  "idRanges": [
+    {
+      "from": 79910,
+      "to": 79930
+    }
+  ],
+  "contextSensitiveHelpUrl": "http://waldo.be/",
+  "showMyCode": true,
+  "runtime": "4.0"
+}

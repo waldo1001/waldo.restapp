@@ -1,0 +1,61 @@
+name: $(Build.BuildId)
+
+variables:
+- name: 'AppVersion'
+  value: '1.0.*.[yyyyWW]'
+- name: 'dockerimage'
+  value: 'mcr.microsoft.com/businesscentral/sandbox:us'
+- name: 'TestFilter'
+  value: '50100..50149'
+
+pool:
+  name: WaldoHetzner
+
+steps:
+- checkout: self
+  clean: true
+  
+- task: ALOpsDockerStart@1
+  inputs:
+    docker_image: $(dockerimage)
+    docker_pull: true
+    docker_login: InsiderDockerRegistry
+
+- task: ALOpsDockerWait@1
+  inputs:
+    search_string: 'Ready for connections!'
+
+- task: ALOpsLicenseImport@1
+  inputs:
+    usedocker: true
+    license_path: $(bc.license)
+    
+- task: ALOpsAppCompiler@1
+  inputs:
+    usedocker: true
+    nav_app_version: $(AppVersion)
+    failed_on_warnings: false    
+
+- task: ALOpsAppPublish@1
+  inputs:
+    usedocker: true
+    nav_artifact_app_filter: '*.app'   
+    skip_verification: true 
+
+# - task: ALOpsAppTest@1
+#   inputs:
+#     usedocker: true
+#     import_action: "Skip"
+#     testfilter: $(TestFilter)
+#     show_available_tests: true
+#   continueOnError: true    
+
+# - task: PublishTestResults@1
+#   inputs:
+#     testResultsFormat: XUnit
+#     testResultsFiles: '**/TestResults.xml'
+#     testRunTitle: 'BC Test Results: $(Build.BuildId)'
+
+- task: ALOpsDockerRemove@1
+  enabled: true
+  condition: always()   

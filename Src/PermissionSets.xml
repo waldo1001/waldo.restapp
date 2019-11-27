@@ -1,0 +1,24 @@
+<PermissionSets>
+    <PermissionSet RoleID="SuperRESTApp" RoleName="Super RESTApp">
+        <Permission>
+            <ObjectType>TableData</ObjectType>
+            <ObjectID>79910</ObjectID> <!-- RestBlob -->
+            <ReadPermission>1</ReadPermission>
+            <InsertPermission>1</InsertPermission>
+            <ModifyPermission>1</ModifyPermission>
+            <DeletePermission>1</DeletePermission>
+            <ExecutePermission>0</ExecutePermission>
+            <SecurityFilter />
+        </Permission>
+        <Permission>
+            <ObjectType>TableData</ObjectType>
+            <ObjectID>79911</ObjectID> <!-- Rest Log -->
+            <ReadPermission>1</ReadPermission>
+            <InsertPermission>1</InsertPermission>
+            <ModifyPermission>1</ModifyPermission>
+            <DeletePermission>1</DeletePermission>
+            <ExecutePermission>0</ExecutePermission>
+            <SecurityFilter />
+        </Permission>
+    </PermissionSet>
+</PermissionSets>
