@@ -13,7 +13,7 @@
     "CRS.OnSaveAlFileAction": "Rename",
     "CRS.RenameWithGit": true,
     "CRS.ObjectNameSuffix": " WLD",
-    "CRS.RemoveSuffixFromFilename": true,
+    //"CRS.RemoveSuffixFromFilename": true,
     "editor.formatOnSave": true,
     "rest-client.rememberCookiesForSubsequentRequests": false,
     "alVarHelper.ignoreALSuffix": "WLD"
