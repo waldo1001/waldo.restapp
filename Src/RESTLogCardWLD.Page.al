@@ -13,26 +13,32 @@ page 79910 "REST Log Card WLD"
             {
                 field(RequestMethod; RequestMethod)
                 {
+                    Tooltip = 'Specifies the RequestMethod';
                     ApplicationArea = All;
                 }
                 field(RequestUrl; RequestUrl)
                 {
+                    Tooltip = 'Specifies the RequestUrl';
                     ApplicationArea = All;
                 }
                 field(ContentType; ContentType)
                 {
+                    Tooltip = 'Specifies the ContentType';
                     ApplicationArea = All;
                 }
                 field(DateTimeCreated; DateTimeCreated)
                 {
+                    Tooltip = 'Specifies the DateTimeCreated';
                     ApplicationArea = All;
                 }
                 field(Duraction; Duraction)
                 {
+                    Tooltip = 'Specifies the Duraction';
                     ApplicationArea = All;
                 }
                 field(User; User)
                 {
+                    Tooltip = 'Specifies the User';
                     ApplicationArea = All;
                 }
             }
@@ -40,10 +46,12 @@ page 79910 "REST Log Card WLD"
             {
                 field(RequestBodySize; RequestBodySize)
                 {
+                    Tooltip = 'Specifies the RequestBodySize';
                     ApplicationArea = All;
                 }
                 field(RequestHeaders; RequestHeaders)
                 {
+                    Tooltip = 'Specifies the RequestHeaders';
                     ApplicationArea = All;
                 }
             }
@@ -51,10 +59,12 @@ page 79910 "REST Log Card WLD"
             {
                 field(ResponseHttpStatusCode; ResponseHttpStatusCode)
                 {
+                    Tooltip = 'Specifies the ResponseHttpStatusCode';
                     ApplicationArea = All;
                 }
                 field(ResponseSize; ResponseSize)
                 {
+                    Tooltip = 'Specifies the ResponseSize';
                     ApplicationArea = All;
                 }
             }
