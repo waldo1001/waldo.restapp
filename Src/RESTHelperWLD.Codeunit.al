@@ -69,11 +69,11 @@ codeunit 79911 "REST Helper WLD"
 
     procedure GetResponseContentAsText() ResponseContentText: Text
     var
-        RestBlob: record "REST Blob WLD";
+        RestBlob: Codeunit "Temp Blob";
         Instr: Instream;
     begin
 
-        RESTBlob.Blob.CreateInStream(Instr);
+        RestBlob.CreateInStream(Instr);
         WebResponse.Content().ReadAs(ResponseContentText);
     end;
 
@@ -90,16 +90,16 @@ codeunit 79911 "REST Helper WLD"
     local procedure Log(StartDateTime: DateTime; TotalDuration: Duration)
     var
         RESTLog: Record "REST Log WLD";
-        RestBlob: record "REST Blob WLD";
-        ResponseBlob: record "REST Blob WLD";
+        RestBlob: Codeunit "Temp Blob";
+        ResponseBlob: Codeunit "Temp Blob";
         Instr: InStream;
         ResponseInstr: InStream;
         Outstr: OutStream;
     begin
-        RestBlob.BLOB.CreateInStream(Instr);
+        RestBlob.CreateInStream(Instr);
         WebContent.ReadAs(Instr);
 
-        ResponseBlob.BLOB.CreateInStream(ResponseInstr);
+        ResponseBlob.CreateInStream(ResponseInstr);
         WebResponse.Content().ReadAs(ResponseInstr);
 
         with RESTLog do begin
