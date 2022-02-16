@@ -14,16 +14,32 @@ codeunit 79913 "ShowResponseMessage Meth WLD"
     local procedure DoShowResponseMessage(var Log: Record "REST Log WLD"; var Handled: Boolean);
     var
         Instr: Instream;
-        RequestMessage: Text;
+        ResponseMessage: Text;
+        TempText: Text;
+        CRLF: Text[2];
     begin
+
         if Handled then
             exit;
 
+        CRLF[1] := 13;
+        CRLF[2] := 10;
+
         log.CalcFields(Response);
         log.Response.CreateInStream(Instr);
-        Instr.ReadText(RequestMessage);
+        // Instr.ReadText(RequestMessage);
 
-        Message(RequestMessage);
+        //show only 50,000 line
+        while (not Instr.EOS) and (StrLen(ResponseMessage) < 50000) do begin
+            Instr.ReadText(TempText);
+            if (strlen(ResponseMessage) > 0) then
+                ResponseMessage := ResponseMessage + CRLF + TempText
+            else
+                ResponseMessage := TempText;
+        end;
+
+
+        Message(ResponseMessage);
     end;
 
     [IntegrationEvent(false, false)]
