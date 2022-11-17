@@ -22,6 +22,18 @@ codeunit 79911 "REST Helper WLD"
         WebRequest.GetHeaders(WebRequestHeaders);
     end;
 
+    procedure SetBasicAuth(username: Text; password: Text)
+    var
+        TypeHelper: Codeunit "Type Helper";
+        AuthorizationHeaderKey: Text;
+        AuthorizationHeaderValue: Text;
+    begin
+        AuthorizationHeaderKey := 'Authorization';
+        AuthorizationHeaderValue := 'Basic ' + TypeHelper.ConvertValueToBase64(username + ':' + password);
+
+        AddRequestHeader(AuthorizationHeaderKey, AuthorizationHeaderValue);
+    end;
+
     procedure AddRequestHeader(HeaderKey: Text; HeaderValue: Text)
     begin
         RestHeaders.AppendLine(HeaderKey + ': ' + HeaderValue);
@@ -85,6 +97,11 @@ codeunit 79911 "REST Helper WLD"
     procedure GetHttpStatusCode(): Integer
     begin
         exit(WebResponse.HttpStatusCode());
+    end;
+
+    procedure GetIsSuccessStatusCode(): Boolean
+    begin
+        exit(WebResponse.IsSuccessStatusCode());
     end;
 
     local procedure Log(StartDateTime: DateTime; TotalDuration: Duration)
