@@ -99,6 +99,11 @@ codeunit 79911 "REST Helper WLD"
         exit(WebResponse.HttpStatusCode());
     end;
 
+    procedure GetIsSuccessStatusCode(): Boolean
+    begin
+        exit(WebResponse.IsSuccessStatusCode());
+    end;
+
     local procedure Log(StartDateTime: DateTime; TotalDuration: Duration)
     var
         RESTLog: Record "REST Log WLD";
